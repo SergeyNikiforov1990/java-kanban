@@ -1,10 +1,9 @@
-public class Subtask extends AbstractTask {
+public class Subtask extends Task {
     protected int epicId;
 
-    public Subtask(String name, String description, int epicId, Status status) {
+    public Subtask(String name, String description, int epicId) {
         super(name, description);
         this.epicId = epicId;
-        this.status = status;
     }
 
     public int getEpicId() {
@@ -20,6 +19,6 @@ public class Subtask extends AbstractTask {
         return  "SubTask { " + "Название: " + name + "; " +
                 "Описание: " + description + "; " +
                 "ID: " + id + "; " +
-                "Статус: " + status + " Epic ID " + epicId + "}";
+                "Статус: " + status + "; " + " Epic ID " + epicId + "}";
     }
 }
