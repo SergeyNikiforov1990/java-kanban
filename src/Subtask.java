@@ -6,17 +6,17 @@ public class Subtask extends Task {
         this.epicId = epicId;
     }
 
-    public int getEpicId() {
+    protected final int getEpicId() {
         return epicId;
     }
 
-    public void setEpicId(int epicId) {
+    protected final void setEpicId(int epicId) {
         this.epicId = epicId;
     }
 
     @Override
-    public String toString(){
-        return  "SubTask { " + "Название: " + name + "; " +
+    public String toString() {
+        return "SubTask { " + "Название: " + name + "; " +
                 "Описание: " + description + "; " +
                 "ID: " + id + "; " +
                 "Статус: " + status + "; " + " Epic ID " + epicId + "}";

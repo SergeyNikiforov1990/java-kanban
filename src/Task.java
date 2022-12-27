@@ -1,6 +1,6 @@
 
 public class Task  {
-    protected String name;
+    protected  String name;
     protected String description;
     protected int id;
     protected Status status;
@@ -10,36 +10,37 @@ public class Task  {
         this.description = description;
     }
 
-    public void setId(int id) {
+    protected final void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
+    protected final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    protected final void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription() {
+    protected final String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    protected final void setDescription(String description) {
         this.description = description;
     }
 
-    public int getId() {
+    protected final Integer getId() {
         return id;
     }
 
-    public Status getStatus() {
+    protected final Status getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    protected final void setStatus(Status status) {
         this.status = status;
+
     }
 
     @Override
