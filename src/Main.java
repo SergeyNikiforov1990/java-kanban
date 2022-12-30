@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Main { // объект для тестов
 
     public static void main(String[] args) {
@@ -9,7 +8,7 @@ public class Main { // объект для тестов
         Subtask subtask2 = new Subtask("Приготовить ужин", "Вскипятить воду в кастрюле", 2);//5
         Subtask subtask3 = new Subtask("Приготовить завтрак", "Пожарить яичницу", 3);//6
         Subtask subtask4 = new Subtask("Приготовить завтрак", "Сварить кофе", 3);//7
-        Manager manager = new Manager();
+        TaskManager manager = new InMemoryTaskManager();
 
         manager.addTask(task);//1
         manager.addEpic(epic);//2
@@ -25,14 +24,24 @@ public class Main { // объект для тестов
         //subtask1.setStatus(Status.DONE);
         //manager.updateSubtask(subtask1);
 
-        System.out.println(epic);
-        subtask1.setStatus(Status.DONE);
-        manager.updateSubtask(subtask1);
+        //System.out.println(epic);
+        //subtask1.setStatus(Status.DONE);
+       // manager.updateSubtask(subtask1);
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.getEpicById(epic1.getId());
+        manager.printHistory();
 
         //System.out.println(epic);
         //System.out.println(manager.getAllEpicSubtasks(subtask1.getEpicId()));
         //manager.deleteSubtaskById(subtask1.getId());
-        System.out.println(epic);
+        //System.out.println(epic);
         //System.out.println(manager.getAllEpics());
         //System.out.println(manager.getAllSubtasks());
 
