@@ -1,4 +1,8 @@
+package manager;
+import task.*;
+import java.util.List;
+
 public interface HistoryManager {
     void add(Task task); // помечает задачи как просмотренные
-    void getHistory(); // возвращает их список
+    List<Task> getHistory(); // возвращает их список
 }

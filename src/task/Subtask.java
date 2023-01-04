@@ -1,3 +1,5 @@
+package task;
+
 public class Subtask extends Task {
     protected int epicId;
 
@@ -6,11 +8,11 @@ public class Subtask extends Task {
         this.epicId = epicId;
     }
 
-    protected final int getEpicId() {
+    public int getEpicId() {
         return epicId;
     }
 
-    protected final void setEpicId(int epicId) {
+    public void setEpicId(int epicId) {
         this.epicId = epicId;
     }
 

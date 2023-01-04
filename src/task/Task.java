@@ -1,6 +1,8 @@
+package task;
 
-public class Task  {
-    protected  String name;
+
+public class Task {
+    protected String name;
     protected String description;
     protected int id;
     protected Status status;
@@ -10,42 +12,41 @@ public class Task  {
         this.description = description;
     }
 
-    protected final void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    protected final String getName() {
+    public String getName() {
         return name;
     }
 
-    protected final void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    protected final String getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    protected final void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    protected final Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-    protected final Status getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    protected final void setStatus(Status status) {
+    public void setStatus(Status status) {
         this.status = status;
 
     }
 
-    @Override
-    public String toString(){
-        return  "Task { " + "Название: " + name + "; "  +
+    public String toString() {
+        return "Task { " + "Название: " + name + "; " +
                 "Описание: " + description + "; " +
                 "ID: " + id + "; " +
                 "Статус: " + status + "}";
