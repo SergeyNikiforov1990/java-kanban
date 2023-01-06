@@ -1,6 +1,5 @@
-import manager.InMemoryTaskManager;
-import manager.TaskManager;
 import task.*;
+import manager.*;
 
 public class Main { // объект для тестов
 
@@ -12,7 +11,7 @@ public class Main { // объект для тестов
         Subtask subtask2 = new Subtask("Приготовить ужин", "Вскипятить воду в кастрюле", 2);//5
         Subtask subtask3 = new Subtask("Приготовить завтрак", "Пожарить яичницу", 3);//6
         Subtask subtask4 = new Subtask("Приготовить завтрак", "Сварить кофе", 3);//7
-        TaskManager taskManager = new InMemoryTaskManager();
+        TaskManager taskManager = Managers.getDefault();
 
         taskManager.addTask(task);//1
         taskManager.addEpic(epic);//2
@@ -30,7 +29,7 @@ public class Main { // объект для тестов
 
         //System.out.println(epic);
         //subtask1.setStatus(Status.DONE);
-       // taskManager.updateSubtask(subtask1);
+        //taskManager.updateSubtask(subtask1);
         taskManager.getEpicById(epic1.getId());
         taskManager.getEpicById(epic1.getId());
         taskManager.getEpicById(epic1.getId());
@@ -43,6 +42,8 @@ public class Main { // объект для тестов
         taskManager.getEpicById(epic1.getId());
         taskManager.getEpicById(epic1.getId());
         taskManager.getEpicById(epic1.getId());
+        taskManager.getEpicById(epic1.getId());
+
         System.out.print(taskManager.getHistory());
 
         //System.out.println(epic);
