@@ -6,11 +6,12 @@ import java.util.List;
 import java.util.HashMap;
 
 public class InMemoryTaskManager implements TaskManager {
+
     private final HistoryManager historyManager = Managers.getDefaultHistory();
-    private int nextId = 1;
     private final HashMap<Integer, Task> tasks = new HashMap<>();
     private final HashMap<Integer, Epic> epics = new HashMap<>();
     private final HashMap<Integer, Subtask> subtasks = new HashMap<>();
+    private int nextId = 1;
 
     @Override
     public int addTask(Task task) {
@@ -63,26 +64,6 @@ public class InMemoryTaskManager implements TaskManager {
         return new ArrayList(subtasks.values());
     }
 
-    @Override
-    public void deleteAllTasks() { // удаления всех Tasks
-        tasks.clear();
-    }
-
-    @Override
-    public void deleteAllSubtasks() { // удаления всех Subtasks
-        for (int id : epics.keySet()){
-            Epic epic = epics.get(id);
-            epic.setStatus(Status.NEW);
-            epic.subtaskIds.clear();
-        }
-        subtasks.clear();
-    }
-
-    @Override
-    public void deleteAllEpics() { // удаления всех Epics
-        epics.clear();
-        subtasks.clear();
-    }
 
     @Override
     public Task getTaskById(int id) { //вывод задачи по ID
@@ -105,6 +86,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void deleteTaskById(int id) { //  удаление по ID.
         tasks.remove(id);
+        historyManager.remove(id);
     }
 
     @Override
@@ -113,6 +95,7 @@ public class InMemoryTaskManager implements TaskManager {
         Epic epic = epics.get(subtask.getEpicId());
         epic.subtaskIds.remove(subtask.getId());
         deleteSubtask(subtask);
+        historyManager.remove(id);
     }
 
     @Override
@@ -120,8 +103,40 @@ public class InMemoryTaskManager implements TaskManager {
         Epic epic = epics.get(id);
         for (int subtaskId : epic.getSubtaskIds()) {
             subtasks.remove(subtaskId);
+            historyManager.remove(subtaskId);
         }
         epics.remove(id);
+        historyManager.remove(id);
+    }
+
+    @Override
+    public void deleteAllTasks() { // удаления всех Tasks
+        for (int taskIds : tasks.keySet()){
+           historyManager.remove(taskIds);
+        }
+        tasks.clear();
+    }
+
+    @Override
+    public void deleteAllSubtasks() { // удаления всех Subtasks
+        for (int id : epics.keySet()){
+            Epic epic = epics.get(id);
+            epic.setStatus(Status.NEW);
+            epic.subtaskIds.clear();
+        }
+        for (int subtaskIds : subtasks.keySet()){
+            historyManager.remove(subtaskIds);
+        }
+        subtasks.clear();
+    }
+
+    @Override
+    public void deleteAllEpics() { // долго думал и пришел к выводу что после удаления эпика из истории, его сабтаски из истории не должны удаляться. Не знаю прав ли.
+        for (int epicId : epics.keySet()){
+            historyManager.remove(epicId);
+        }
+        epics.clear();
+        subtasks.clear();
     }
 
     @Override
