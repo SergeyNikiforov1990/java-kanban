@@ -1,15 +1,12 @@
 package manager;
 import task.*;
-
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
 
-    protected CustomLinkedList <Task> historyOfViews = new CustomLinkedList<>();
+    protected CustomLinkedList historyOfViews = new CustomLinkedList();
 
     @Override
     public void add(Task task) {
@@ -30,7 +27,7 @@ public class InMemoryHistoryManager implements HistoryManager {
         historyOfViews.removeNode(historyOfViews.mapOfHistoryViews.get(id));
     }
 
-    public class CustomLinkedList<T>{
+    public class CustomLinkedList {
         protected HashMap<Integer, Node <Task>> mapOfHistoryViews = new HashMap<>();
         public Node<Task> head;
         public Node <Task> tail;

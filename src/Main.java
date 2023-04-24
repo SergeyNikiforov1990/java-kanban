@@ -1,49 +1,41 @@
 import task.*;
 import manager.*;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 public class Main { // объект для тестов
 
-    public static void main(String[] args) {  // хочу сказать, что ЭТО тз показалось мне самым сложным!
+    public static void main(String[] args) {
+        TaskManager manager = Managers.getDefaultBacked();
+        InMemoryTaskManager taskManager = new InMemoryTaskManager();
 
-        Task task1 = new Task("taskName1", "taskDesc1");
-        Task task2 = new Task("taskName2", "taskDesc2");
-        Epic epic1 = new Epic("epicName1", "epicDesc3");
-        Epic epic2 = new Epic("epicName2", "epicDesc4");
-        Subtask subtask1 = new Subtask("subName1", "subDesc5", 3);
-        Subtask subtask2 = new Subtask("subName2", "subDesc6", 3);
-        Subtask subtask3 = new Subtask("subName3", "subDesc7", 4);
-        Subtask subtask4 = new Subtask("subName4", "subDesc8", 4);
+        manager.addTask(new Task("taskName1", "taskDesc1", Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2023, 2, 26, 20,7)));
+        manager.addTask(new Task("taskName2", "taskDesc2"));
+        manager.addEpic(new Epic("epicName1", "epicDesc3"));
+        manager.addEpic(new Epic("epicName2", "epicDesc4"));
+        manager.addSubtask(new Subtask("subName1", "subDesc5", 3, Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2025, 2, 26, 20,7)));
+        manager.addSubtask(new Subtask("subName2", "subDesc6", 3, Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2026, 2, 26, 20,7)));
+        manager.addSubtask(new Subtask("subName3", "subDesc7", 4, Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2027, 2, 26, 20,7)));
+        manager.addSubtask(new Subtask("subName4", "subDesc8", 4, Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2028, 2, 26, 20,7)));
+        //TaskManager taskManager = Managers.getDefault();
 
-        TaskManager taskManager = Managers.getDefault();
+        manager.getTaskById(1);
+        manager.getTaskById(2);
+        manager.getEpicById(3);
+        manager.getEpicById(4);
+        manager.getSubtaskById(5);
+        manager.getSubtaskById(6);
+        manager.getSubtaskById(7);
+        manager.getSubtaskById(8);
+        manager.getSubtaskById(8);
 
-        taskManager.addTask(task1);
-        taskManager.addTask(task2);
-        taskManager.addEpic(epic1);
-        taskManager.addEpic(epic2);
-        taskManager.addSubtask(subtask1);
-        taskManager.addSubtask(subtask2);
-        taskManager.addSubtask(subtask3);
-        taskManager.addSubtask(subtask4);
-
-        taskManager.getTaskById(1);
-        taskManager.getTaskById(2);
-        taskManager.getEpicById(3);
-        taskManager.getEpicById(4);
-        taskManager.getSubtaskById(5);
-        taskManager.getSubtaskById(6);
-        taskManager.getSubtaskById(7);
-        taskManager.getSubtaskById(8);
-        taskManager.getSubtaskById(8);
-
-        System.out.print(taskManager.getHistory());
+        System.out.println(taskManager.getPrioritizedTasks());
 
 
 
-
-
-
-
-
+       //System.out.print(taskManager.getHistory());
 
     }
 }
