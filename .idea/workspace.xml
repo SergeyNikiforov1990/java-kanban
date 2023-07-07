@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c6b4bb9-7670-465b-a8b2-c672bfe1c31a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java-kanban_7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTTPServer/HttpTaskServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTTPServer/KVServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTTPServer/KVTaskClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main1.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Test/EpicTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Test/FileBackedTaskManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/HttpTaskManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/HttpTaskServerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Test/InMemoryHistoryManagerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Test/InMemoryTaskManagerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Test/TaskManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/CrossingTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/ManagerSaveException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/manager/CrossingTimeException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/manager/FileBackedTasksManager.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/manager/Formatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/manager/HttpTaskManager.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/manager/InputException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/manager/ManagerSaveException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/manager/Node.java" afterDir="false" />
@@ -22,10 +29,9 @@
       <change afterPath="$PROJECT_DIR$/src/task/Subtask.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/task/Task.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/task/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-kanban_7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-kanban_7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Epic.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/HistoryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InMemoryHistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/InMemoryHistoryManager.java" afterDir="false" />
@@ -45,8 +51,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,20 +67,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/dev/m1-t25-api/lib/gson-2.9.0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -84,9 +94,8 @@
       <recent name="task" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="FileBackedTasksManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="manager.FileBackedTasksManager" />
+  <component name="RunManager" selected="JUnit.HttpTaskServerTest.shouldGetSortedTasks">
+    <configuration name="HttpTaskServerTest.shouldDeleteEpicById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban_7" />
       <extension name="coverage">
         <pattern>
@@ -94,21 +103,85 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="shouldDeleteEpicById" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="HttpTaskServerTest.shouldDeleteTasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban_7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="shouldDeleteTasks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.shouldGetHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban_7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="shouldGetHistory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.shouldGetSortedTasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban_7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="shouldGetSortedTasks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.shouldUpdateSubtask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban_7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="shouldUpdateSubtask" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.FileBackedTasksManager" />
+        <item itemvalue="JUnit.HttpTaskServerTest.shouldGetSortedTasks" />
+        <item itemvalue="JUnit.HttpTaskServerTest.shouldGetHistory" />
+        <item itemvalue="JUnit.HttpTaskServerTest.shouldDeleteEpicById" />
+        <item itemvalue="JUnit.HttpTaskServerTest.shouldDeleteTasks" />
+        <item itemvalue="JUnit.HttpTaskServerTest.shouldUpdateSubtask" />
       </list>
     </recent_temporary>
   </component>
@@ -122,5 +195,33 @@
       <updated>1677422190846</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/manager/InMemoryTaskManager.java</url>
+          <line>11</line>
+          <properties field="tasks" class="manager.InMemoryTaskManager" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="manager.FileBackedTasksManager" memberName="historyManager" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/java_kanban_7$InMemoryTaskManagerTest_shouldAddEpic.ic" NAME="InMemoryTaskManagerTest.shouldAddEpic Coverage Results" MODIFIED="1683043640481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/java_kanban_7$InMemoryTaskManagerTest_shouldGetAllTasks.ic" NAME="InMemoryTaskManagerTest.shouldGetAllTasks Coverage Results" MODIFIED="1683050748759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
   </component>
 </project>
