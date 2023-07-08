@@ -8,6 +8,10 @@ import task.Epic;
 import task.Status;
 import task.Subtask;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class EpicTest {
@@ -19,8 +23,8 @@ class EpicTest {
     @BeforeEach
     private void beforeEach() {
         epic = new Epic("epicName1",1);
-        subtask1 = new Subtask("subName1",1);
-        subtask2 = new Subtask("subName2",1);
+        subtask1 = new Subtask("subName1", 1, Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2023, 1, 1, 0,1));
+        subtask2 = new Subtask("subName1", 1, Duration.of(1, ChronoUnit.HOURS), LocalDateTime.of(2023, 1, 1, 6,1));
 
     }
 

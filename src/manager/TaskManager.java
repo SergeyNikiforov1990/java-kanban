@@ -7,6 +7,8 @@ import task.Task;
 import java.util.List;
 
 public interface TaskManager {
+
+    public List<Task> getPrioritizedTasks();
     int addTask(Task task);
 
     int addEpic(Epic epic);

@@ -10,7 +10,6 @@ public class Task  {
     protected String description;
     protected int id;
     protected Status status;
-    protected Type type = Type.TASK;
     protected Duration duration;
     protected LocalDateTime startTime;
     protected LocalDateTime endTime;
@@ -18,6 +17,18 @@ public class Task  {
     public Task(String name, String description, Duration duration, LocalDateTime startTime) {
         this.name = name;
         this.description = description;
+        this.duration = duration;
+        this.startTime = startTime;
+    }
+    public Task(String name, String description, Duration duration, LocalDateTime startTime, LocalDateTime endTime) {
+        this.name = name;
+        this.description = description;
+        this.duration = duration;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+    public Task(String name, Duration duration, LocalDateTime startTime) {
+        this.name = name;
         this.duration = duration;
         this.startTime = startTime;
     }
@@ -53,6 +64,10 @@ public class Task  {
         this.duration = duration;
     }
 
+    public void setEndTime(LocalDateTime startTime, Duration duration) {
+        this.endTime = startTime.plus(duration);
+    }
+
     public Duration getDuration(){ //НОВЫЙ
         return this.duration;
     }
@@ -65,7 +80,6 @@ public class Task  {
         return id == task.id
                 && Objects.equals(name, task.name)
                 && Objects.equals(description, task.description)
-                && status == task.status && type == task.type
                 && Objects.equals(duration, task.duration)
                 && Objects.equals(startTime, task.startTime)
                 && Objects.equals(endTime, task.endTime);
@@ -73,7 +87,7 @@ public class Task  {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, id, status, type, duration, startTime, endTime);
+        return Objects.hash(name, description, id, status, duration, startTime, endTime);
     }
 
     public void setId(int id) {
@@ -82,14 +96,6 @@ public class Task  {
 
     public String getName() {
         return name;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
     }
 
     public String getDescription() {
@@ -119,6 +125,11 @@ public class Task  {
                 ", duration=" + duration +
                 ", startTime=" + startTime +
                 '}';
+    }
+
+    public void resetStartTimeAndDuration() {
+        startTime = null;
+        duration = null;
     }
 
     /* @Override

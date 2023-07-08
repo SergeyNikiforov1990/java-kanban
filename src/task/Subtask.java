@@ -17,6 +17,14 @@ public class Subtask extends Task {
         super(name, description, duration, startTime);
         this.epicId = epicId;
     }
+    public Subtask (String name, String description, int epicId, Duration duration, LocalDateTime startTime, LocalDateTime endTime) {
+        super(name, description, duration, startTime, endTime);
+        this.epicId = epicId;
+    }
+    public Subtask (String name,  int epicId, Duration duration, LocalDateTime startTime) {
+        super(name, duration, startTime);
+        this.epicId = epicId;
+    }
 
     public Subtask(String name, int epicId) {
         super(name);
@@ -31,6 +39,10 @@ public class Subtask extends Task {
         return epicId;
     }
 
+    public void setEpicId (int epicId){
+        this.epicId = epicId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,10 +52,6 @@ public class Subtask extends Task {
                 status == subTask.status && type == subTask.type && epicId == subTask.epicId;
     }
 
-    @Override
-    public Type getType() {
-        return type;
-    }
 
     @Override
     public String toString() {

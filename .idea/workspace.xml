@@ -4,44 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c6b4bb9-7670-465b-a8b2-c672bfe1c31a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HTTPServer/HttpTaskServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HTTPServer/KVServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HTTPServer/KVTaskClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/EpicTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/FileBackedTaskManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/HttpTaskManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/HttpTaskServerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/InMemoryHistoryManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/InMemoryTaskManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/TaskManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/ManagerSaveException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/CrossingTimeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/FileBackedTasksManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/Formatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/HttpTaskManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/InputException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/ManagerSaveException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/Epic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/Subtask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task/Type.java" afterDir="false" />
+    <list default="true" id="0c6b4bb9-7670-465b-a8b2-c672bfe1c31a" name="Changes" comment="Java_kanban8_v1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-kanban_7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-kanban_7.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Epic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/HistoryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InMemoryHistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/InMemoryHistoryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/InMemoryTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Managers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/Managers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Subtask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/TaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,24 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/dev/m1-t25-api/lib/gson-2.9.0.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/m1-t25-api/lib/gson-2.9.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -194,10 +158,22 @@
       <option name="presentableId" value="Default" />
       <updated>1677422190846</updated>
     </task>
+    <task id="LOCAL-00001" summary="Java_kanban8_v1.0">
+      <created>1688760939650</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688760939650</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Java_kanban8_v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java_kanban8_v1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

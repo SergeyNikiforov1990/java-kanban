@@ -13,7 +13,7 @@ import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-abstract public class TaskManagerTest<T extends TaskManager> {
+abstract public class TaskManagerTest <T extends TaskManager> {
     protected final T object;
     TaskManager taskManager;
     Epic epic;

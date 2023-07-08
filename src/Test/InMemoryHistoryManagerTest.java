@@ -23,7 +23,7 @@ class InMemoryHistoryManagerTest {
 
     @Test
     void shouldReturnEmptyHistoryList() {
-        assertNull(inMemoryHistoryManager.getHistory());
+        assertEquals(0,inMemoryHistoryManager.getHistory().size());
     }
 
     @Test

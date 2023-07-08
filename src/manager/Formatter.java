@@ -2,6 +2,8 @@ package manager;
 import task.Epic;
 import task.Subtask;
 import task.Task;
+import task.Type;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +11,14 @@ public class Formatter {
     String toString(Task task) {
         if (task instanceof Subtask) {
             Subtask subtask = (Subtask) task;
-            return subtask.getId() + "," + subtask.getType() + "," + subtask.getName() + "," + subtask.getStatus() + ","
-                    + subtask.getDescription() + "," + subtask.getEpicId() + "," + subtask.getDuration() + "," + subtask.getStartTime();
+            return subtask.getId() + "," + Type.SUBTASK + "," + subtask.getName() + "," + subtask.getStatus() + ","
+                    + subtask.getDescription() + "," + subtask.getEpicId() + "," + subtask.getDuration() + "," + subtask.getStartTime() + "," + subtask.getEndTime();
         } else if (task instanceof Epic) {
             Epic epic = (Epic) task;
-            return epic.getId() + "," + epic.getType() + "," + epic.getName() + "," + epic.getStatus() + ","
-                    + epic.getDescription() + "," + epic.getDuration() + "," + epic.getStartTime();
+            return epic.getId() + "," + Type.EPIC + "," + epic.getName() + "," + epic.getStatus() + ","
+                    + epic.getDescription() + "," + epic.getDuration() + "," + epic.getStartTime()+ "," + epic.getEndTime();
         } else if (task != null) {
-            return task.getId() + "," + task.getType() + "," + task.getName() + "," + task.getStatus() + "," + task.getDescription() + "," + task.getDuration() + "," + task.getStartTime();
+            return task.getId() + "," + Type.TASK + "," + task.getName() + "," + task.getStatus() + "," + task.getDescription() + "," + task.getDuration() + "," + task.getStartTime()+ "," + task.getEndTime();
         }
         throw new IllegalStateException("Unexpected value!!!");
     }
