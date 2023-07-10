@@ -357,5 +357,13 @@ public class InMemoryTaskManager implements TaskManager {
         return historyManager.getHistory();
     }
 
+    @Override
+    public void save() {
+    }
+
+    @Override
+    public void load() {
+    }
+
 
 }

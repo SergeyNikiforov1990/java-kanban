@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0c6b4bb9-7670-465b-a8b2-c672bfe1c31a" name="Changes" comment="Java_kanban8_v1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTTPServer/HttpTaskServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTTPServer/HttpTaskServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/HttpTaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/HttpTaskManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/TaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +62,8 @@
       <recent name="task" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HttpTaskServerTest.shouldGetSortedTasks">
-    <configuration name="HttpTaskServerTest.shouldDeleteEpicById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.HttpTaskManagerTest.shouldSave">
+    <configuration name="HttpTaskManagerTest and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban_7" />
       <extension name="coverage">
         <pattern>
@@ -68,14 +72,48 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
-      <option name="METHOD_NAME" value="shouldDeleteEpicById" />
+      <option name="MAIN_CLASS_NAME" value="Test.TaskManagerTest" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="Test.HttpTaskManagerTest" />
+        <pattern testClass="Test.InMemoryTaskManagerTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban_7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskManagerTest.shouldSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban_7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskManagerTest" />
+      <option name="METHOD_NAME" value="shouldSave" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpTaskServerTest.shouldDeleteTasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpTaskManagerTest.shouldSaveAndLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban_7" />
       <extension name="coverage">
         <pattern>
@@ -84,24 +122,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
-      <option name="METHOD_NAME" value="shouldDeleteTasks" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpTaskServerTest.shouldGetHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-kanban_7" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
-      <option name="METHOD_NAME" value="shouldGetHistory" />
+      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskManagerTest" />
+      <option name="METHOD_NAME" value="shouldSaveAndLoad" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,29 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpTaskServerTest.shouldUpdateSubtask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-kanban_7" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.HttpTaskServerTest" />
-      <option name="METHOD_NAME" value="shouldUpdateSubtask" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HttpTaskManagerTest.shouldSave" />
+        <item itemvalue="JUnit.HttpTaskManagerTest" />
+        <item itemvalue="JUnit.HttpTaskManagerTest.shouldSaveAndLoad" />
+        <item itemvalue="JUnit.HttpTaskManagerTest and 1 more" />
         <item itemvalue="JUnit.HttpTaskServerTest.shouldGetSortedTasks" />
-        <item itemvalue="JUnit.HttpTaskServerTest.shouldGetHistory" />
-        <item itemvalue="JUnit.HttpTaskServerTest.shouldDeleteEpicById" />
-        <item itemvalue="JUnit.HttpTaskServerTest.shouldDeleteTasks" />
-        <item itemvalue="JUnit.HttpTaskServerTest.shouldUpdateSubtask" />
       </list>
     </recent_temporary>
   </component>
@@ -176,16 +182,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Java_kanban8_v1.0" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/manager/InMemoryTaskManager.java</url>
-          <line>11</line>
-          <properties field="tasks" class="manager.InMemoryTaskManager" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="manager.FileBackedTasksManager" memberName="historyManager" />

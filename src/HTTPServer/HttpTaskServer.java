@@ -21,12 +21,6 @@ public class HttpTaskServer {
     private final TaskManager taskManager;
     private final HttpServer server;
 
-    // оставил для тестов эндпоинтов
-    /*public static void main(String[] args) throws IOException, InterruptedException {
-        HttpTaskServer server1 = new HttpTaskServer();
-         //server1.start();
-    }*/
-
 
     public HttpTaskServer() throws IOException, InterruptedException {
         server = HttpServer.create();
@@ -40,8 +34,7 @@ public class HttpTaskServer {
         server.createContext("/tasks/subtask/epic/", this::handleEpicSubtasks);
         server.createContext("/tasks/history/", this::handleHistory);
         server.createContext("/tasks/", this::handlePrioritizedTasks);
-        //server.start(); // оставил для тестов эндпоинтов
-        //System.out.println("Сервер Запущен"); // оставил для тестов эндпоинтов
+        server.start(); // оставил для тестов эндпоинтов
     }
 
     private void writeResponse(HttpExchange exchange, String response, int responseCode) throws IOException {
@@ -74,7 +67,7 @@ public class HttpTaskServer {
     }
 
     public void start() {
-        //System.out.println("Запуск сервера, порт " + PORT);
+        System.out.println("Запуск сервера, порт " + PORT);
         server.start();
     }
 
@@ -85,8 +78,6 @@ public class HttpTaskServer {
             String response = "молодецTask";
             switch (method) {
                 case "GET":
-                    System.out.println("работает");
-                    //writeResponse(exchange, response, 200);
                     if (query == null) {
                         response = gson.toJson(taskManager.getAllTasks());
                         writeResponse(exchange, response, 200);
@@ -105,7 +96,6 @@ public class HttpTaskServer {
                     }
                     break;
                 case "POST":
-                    System.out.println("работает");
                     Task task = gson.fromJson(readText(exchange), Task.class);
                     if (taskManager.getAllTasks().contains(task)) {
                         taskManager.updateTask(task); // исправил
@@ -153,7 +143,7 @@ public class HttpTaskServer {
         try {
             String query = exchange.getRequestURI().getQuery();
             String method = exchange.getRequestMethod();
-            String response = "молодецEpic";
+            String response = "";
             switch (method) {
                 case "GET":
                     if (query == null) {

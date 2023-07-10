@@ -1,4 +1,5 @@
 package Test;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HttpTaskManagerTest extends TaskManagerTest<HttpTaskManager> {
     static KVServer kvServer;
     private String url;
-
     public HttpTaskManagerTest(HttpTaskManager object) {
         super(object);
     }
-
 
     @BeforeAll
     static void globalSetUp() {
@@ -29,6 +28,11 @@ public class HttpTaskManagerTest extends TaskManagerTest<HttpTaskManager> {
         url = "http://localhost:";
         taskManager = new HttpTaskManager(url);
         taskManager.deleteAllTasks();
+    }
+
+    @AfterAll
+    static void stop(){
+        kvServer.stop();
     }
 
     @Test
@@ -46,6 +50,24 @@ public class HttpTaskManagerTest extends TaskManagerTest<HttpTaskManager> {
         assertEquals(taskManager.getAllEpics(), newManager.getEpics());
         assertEquals(taskManager.getAllSubtasks(), newManager.getSubtasks());
         assertEquals(taskManager.getAllTasks(), newManager.getTasks());
-        kvServer.stop();
     }
+
+    /*@Test
+    public void shouldSave(){
+        taskManager = new HttpTaskManager(url);
+        taskManager.deleteAllTasks();
+        Task task1 = new Task("TaskName1", "TaskDesc1");
+        int taskId = taskManager.addTask(task1);
+        taskManager.getTaskById(taskId);
+        //taskManager.load();
+        assertEquals(taskManager.getTaskById(taskId), task1);
+    }
+
+    @Test
+    public void shouldLoad(){
+        int taskId1 = taskManager.addTask(new Task("TaskName1", "TaskDesc1"));
+        int taskId2 = taskManager.addTask(new Task("TaskName1", "TaskDesc1"));
+        taskManager.getTaskById(taskId1);
+        taskManager.getTaskById(taskId2);
+    }*/
 }
